@@ -41,5 +41,12 @@ func _unhandled_input(event: InputEvent) -> void:
 			twist_input = -event.relative.x * mouse_senstivity
 			pitch_input = -event.relative.y * mouse_senstivity
 
-func _on_body_entered(body):
-	can_jump = true
+func _integrate_forces(state):
+	can_jump = false
+
+	for i in range(state.get_contact_count()):
+		var normal = state.get_contact_local_normal(i)
+
+		if normal.dot(Vector3.UP) > 0.7:
+			can_jump = true
+			break
