@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://dxxs5m3sqdbdb"]
+
+[ext_resource type="PackedScene" uid="uid://bms6hfw7gbgd3" path="res://player.tscn" id="1_0ba56"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2poj3"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_ebmjs"]
+sky_material = SubResource("ProceduralSkyMaterial_2poj3")
+
+[sub_resource type="Environment" id="Environment_qxrlw"]
+background_mode = 2
+sky = SubResource("Sky_ebmjs")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_sfrck"]
+size = Vector2(50, 50)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_0ba56"]
+data = PackedVector3Array(5, 0, 5, -5, 0, 5, 5, 0, -5, -5, 0, 5, -5, 0, -5, 5, 0, -5)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0ba56"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0ba56"]
+albedo_color = Color(7.70092e-07, 0.41392627, 0.5334175, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vsvp5"]
+
+[node name="Node3D" type="Node3D" unique_id=1603397852]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=374678724]
+environment = SubResource("Environment_qxrlw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=625942990]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, -0.65913117, 1.9679824, -0.8650007)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=322567446]
+mesh = SubResource("PlaneMesh_sfrck")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1294001192]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1943292748]
+shape = SubResource("ConcavePolygonShape3D_0ba56")
+
+[node name="Player" parent="." unique_id=1333031934 instance=ExtResource("1_0ba56")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -2)
+lock_rotation = true
+linear_damp = 3.0
+
+[node name="Platform 1" type="StaticBody3D" parent="." unique_id=1203852494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform 1" unique_id=793069981]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_0ba56")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ba56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform 1" unique_id=1634042796]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("BoxShape3D_vsvp5")
+
+[node name="Platform 1" type="StaticBody3D" parent="Platform 1" unique_id=595922348]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform 1/Platform 1" unique_id=1136643951]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_0ba56")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ba56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform 1/Platform 1" unique_id=410203954]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("BoxShape3D_vsvp5")
+
+[node name="Platform 1" type="StaticBody3D" parent="Platform 1/Platform 1" unique_id=453392878]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 5)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform 1/Platform 1/Platform 1" unique_id=125334914]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+mesh = SubResource("BoxMesh_0ba56")
+surface_material_override/0 = SubResource("StandardMaterial3D_0ba56")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform 1/Platform 1/Platform 1" unique_id=407652869]
+transform = Transform3D(5, 0, 0, 0, 1, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("BoxShape3D_vsvp5")
