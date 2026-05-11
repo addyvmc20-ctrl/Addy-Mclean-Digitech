@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Digitech Game Name"
+config/name="Digitech Platformer Game"
 run/main_scene="uid://dxxs5m3sqdbdb"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
@@ -20,6 +20,11 @@ config/icon="res://icon.svg"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
+
+[global_group]
+
+ice="Ice group"
+spike=""
 
 [input]
 
