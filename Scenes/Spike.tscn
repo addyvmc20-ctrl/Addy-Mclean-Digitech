@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://clpnk68ygt8h3"]
+
+[ext_resource type="Script" uid="uid://bdhgbjr8jnodb" path="res://Scenes/Spike.gd" id="1_gt2xr"]
+[ext_resource type="CylinderMesh" uid="uid://cxumcebfbi78i" path="res://spike_mesh.tres" id="1_n83sx"]
+[ext_resource type="Material" uid="uid://dxmyoca3sgik8" path="res://Scenes/spike_material.tres" id="2_gt2xr"]
+[ext_resource type="Shape3D" uid="uid://c4nd5ehyhfnsb" path="res://spike_collision_3d.tres" id="3_hxkth"]
+
+[node name="Spike4" type="Area3D" unique_id=1393650104 groups=["spike"]]
+script = ExtResource("1_gt2xr")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=86721674]
+mesh = ExtResource("1_n83sx")
+surface_material_override/0 = ExtResource("2_gt2xr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1353212272]
+shape = ExtResource("3_hxkth")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
