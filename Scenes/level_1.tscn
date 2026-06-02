@@ -10,21 +10,28 @@
 [ext_resource type="Material" uid="uid://dcv28ccxcrx3v" path="res://Materials/stationary_platform.tres" id="8_oovug"]
 [ext_resource type="Script" uid="uid://c47etn0lx5ovh" path="res://Scripts/fall_death_zone.gd" id="9_wrinw"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2poj3"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrinw"]
+sky_top_color = Color(0.0003117929, 0, 0.037164446, 1)
+sky_horizon_color = Color(0.0036480566, 4.512258e-08, 0.07047538, 1)
+sky_energy_multiplier = 0.8
+ground_bottom_color = Color(0, 0, 0.03529412, 1)
+ground_horizon_color = Color(0.003921569, 0, 0.07058824, 1)
 
 [sub_resource type="Sky" id="Sky_ebmjs"]
-sky_material = SubResource("ProceduralSkyMaterial_2poj3")
+sky_material = SubResource("ProceduralSkyMaterial_wrinw")
 
 [sub_resource type="Environment" id="Environment_qxrlw"]
 background_mode = 2
+background_color = Color(2.9329676e-08, 0, 0.058501996, 1)
 sky = SubResource("Sky_ebmjs")
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 2.0
 tonemap_mode = 2
 glow_enabled = true
+fog_light_energy = 0.51
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_esopp"]
-size = Vector3(50, 1, 100)
+size = Vector3(50, 1, 125.42468)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5rrr5"]
 size = Vector3(1, 2, 1)
@@ -83,11 +90,22 @@ size = Vector3(3, 1, 8)
 environment = SubResource("Environment_qxrlw")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=625942990]
-transform = Transform3D(-0.8660254, -0.43301278, 0.24999999, 0.24421169, 0.069985956, 0.96719325, -0.4363035, 0.8986668, 0.045137167, 0, 20, 0)
+transform = Transform3D(0.5279033, -0.7161746, 0.4565218, 0.66581935, 0.68268406, 0.3010432, -0.5272597, 0.14503936, 0.83723414, -1.4903917, 28.016266, 7.9405136)
+light_indirect_energy = 1.08
+light_angular_distance = 1.0
+shadow_enabled = true
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=1870566086]
+transform = Transform3D(0.97996277, -0.19891588, 0.010268271, -0.17466027, -0.8333998, 0.5243459, -0.095743135, -0.51563287, -0.8514435, -1.4903917, 28.016266, 63.453285)
+light_energy = 0.3
+light_indirect_energy = 0.725
+light_volumetric_fog_energy = 0.0
+light_specular = 0.475
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=322567446]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40.120575, 25)
+visible = false
 mesh = ExtResource("1_xrdnt")
 surface_material_override/0 = ExtResource("2_wrinw")
 
@@ -119,6 +137,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 24.027636)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall_Front" unique_id=1518740365]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+visible = false
 mesh = SubResource("BoxMesh_xylue")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Front" unique_id=23197196]
@@ -129,6 +148,7 @@ shape = SubResource("BoxShape3D_tj5wv")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, -24)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall_Back" unique_id=649781847]
+visible = false
 mesh = SubResource("BoxMesh_ienac")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Back" unique_id=1488911821]
@@ -139,6 +159,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 12, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall_Left" unique_id=1374013374]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 25)
+visible = false
 mesh = ExtResource("5_uy8f0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Left" unique_id=1545580100]
@@ -150,6 +171,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.088, 12, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall_Right" unique_id=1165263743]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
+visible = false
 mesh = ExtResource("5_uy8f0")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Right" unique_id=1744593839]
@@ -258,9 +280,11 @@ surface_material_override/0 = ExtResource("8_oovug")
 shape = SubResource("BoxShape3D_chwpn")
 
 [node name="FallDeathZone" type="Area3D" parent="." unique_id=699284120]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.9201145, 0)
 script = ExtResource("9_wrinw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallDeathZone" unique_id=481050757]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4967823, 12.712341)
 shape = SubResource("BoxShape3D_esopp")
 
 [node name="End_trigger2" type="Area3D" parent="." unique_id=1246077191]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://clpnk68ygt8h3"]
 
-[ext_resource type="Script" uid="uid://bdhgbjr8jnodb" path="res://Scenes/Spike.gd" id="1_gt2xr"]
+[ext_resource type="Script" uid="uid://bdhgbjr8jnodb" path="res://Scripts/Spike.gd" id="1_gt2xr"]
 [ext_resource type="CylinderMesh" uid="uid://cxumcebfbi78i" path="res://Mesh/spike_mesh.tres" id="1_n83sx"]
 [ext_resource type="Material" uid="uid://dxmyoca3sgik8" path="res://Materials/spike_material.tres" id="2_gt2xr"]
 [ext_resource type="Shape3D" uid="uid://c4nd5ehyhfnsb" path="res://Collisions/spike_collision_3d.tres" id="3_hxkth"]

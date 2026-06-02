@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bms6hfw7gbgd3" path="res://Scenes/player.tscn" id="1_0ba56"]
 [ext_resource type="Material" uid="uid://bwgyr4petrhpb" path="res://Materials/ground.tres" id="1_tj5wv"]
 [ext_resource type="Material" uid="uid://dcv28ccxcrx3v" path="res://Materials/stationary_platform.tres" id="2_fuudy"]
-[ext_resource type="Script" uid="uid://cc7cyghxrbnv8" path="res://Scenes/moving_platform.gd" id="2_vsvp5"]
+[ext_resource type="Script" uid="uid://cc7cyghxrbnv8" path="res://Scripts/moving_platform.gd" id="2_vsvp5"]
 [ext_resource type="Material" uid="uid://cxvf4wj4uqa7y" path="res://Materials/start_platform.tres" id="2_xylue"]
 [ext_resource type="Material" uid="uid://5fkbsb00hwn8" path="res://Materials/moving_platform.tres" id="4_xylue"]
 [ext_resource type="PhysicsMaterial" uid="uid://budgntmc3io5f" path="res://Physics Materials/ice_physic_plat.tres" id="7_5rrr5"]

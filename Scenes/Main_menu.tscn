@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://cyodeuqrd5lbw"]
 
 [ext_resource type="Script" uid="uid://bxbnlba5hpfjt" path="res://Scripts/main_menu.gd" id="1_f7j37"]
-[ext_resource type="Texture2D" uid="uid://do73o41ocu03b" path="res://Images/Screenshot 2026-05-28 103917.png" id="2_787fc"]
+[ext_resource type="Texture2D" uid="uid://chishj47br8rf" path="res://Images/Screenshot 2026-05-31 191014.png" id="2_f7j37"]
 [ext_resource type="FontFile" uid="uid://ckerdr7ux1vlj" path="res://Fonts/Super Mindset.ttf" id="3_ihofj"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_x6lt7"]
-texture = ExtResource("2_787fc")
+texture = ExtResource("2_f7j37")
 modulate_color = Color(0.34407577, 0.34407574, 0.34407574, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_siod4"]
