@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://bd7uxeby4vpb0"]
 
-[ext_resource type="Material" uid="uid://bwgyr4petrhpb" path="res://Materials/ground.tres" id="1_v36qu"]
-[ext_resource type="BoxMesh" uid="uid://uxoqrw36atc6" path="res://Mesh/Floor_mesh.tres" id="2_055b2"]
 [ext_resource type="PackedScene" uid="uid://bms6hfw7gbgd3" path="res://Scenes/player.tscn" id="2_cggpd"]
 [ext_resource type="Material" uid="uid://cxvf4wj4uqa7y" path="res://Materials/start_platform.tres" id="3_055b2"]
 [ext_resource type="Script" uid="uid://cbve6f1lx45l3" path="res://Scripts/level_end_trigger.gd" id="4_2mgoq"]
@@ -29,9 +27,6 @@ ambient_light_energy = 2.0
 tonemap_mode = 2
 glow_enabled = true
 fog_light_energy = 0.51
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_esopp"]
-size = Vector3(50, 1, 100)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5rrr5"]
 size = Vector3(1, 2, 1)
@@ -120,17 +115,6 @@ linear_damp = 3.0
 jump_force = 14.0
 move_force = 1400.0
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=322567446]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
-visible = false
-material_override = ExtResource("1_v36qu")
-mesh = ExtResource("2_055b2")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1294001192]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1943292748]
-shape = SubResource("BoxShape3D_esopp")
-
 [node name="Start" type="StaticBody3D" parent="." unique_id=1203852494]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
@@ -204,7 +188,7 @@ shape = SubResource("BoxShape3D_pmxqn")
 script = ExtResource("8_2mgoq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallDeathZone" unique_id=1143089068]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.296295, 25)
 shape = SubResource("BoxShape3D_uhnj4")
 
 [node name="Platform 8" type="StaticBody3D" parent="." unique_id=2081777092]

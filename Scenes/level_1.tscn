@@ -1,7 +1,5 @@
 [gd_scene format=3 uid="uid://c21j88ct7eeyn"]
 
-[ext_resource type="BoxMesh" uid="uid://uxoqrw36atc6" path="res://Mesh/Floor_mesh.tres" id="1_xrdnt"]
-[ext_resource type="Material" uid="uid://bwgyr4petrhpb" path="res://Materials/ground.tres" id="2_wrinw"]
 [ext_resource type="PackedScene" uid="uid://bms6hfw7gbgd3" path="res://Scenes/player.tscn" id="3_chwpn"]
 [ext_resource type="Material" uid="uid://cxvf4wj4uqa7y" path="res://Materials/start_platform.tres" id="4_af3po"]
 [ext_resource type="BoxMesh" uid="uid://dta4l17a3ryb0" path="res://Mesh/wall_mesh.tres" id="5_uy8f0"]
@@ -29,9 +27,6 @@ ambient_light_energy = 2.0
 tonemap_mode = 2
 glow_enabled = true
 fog_light_energy = 0.51
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_esopp"]
-size = Vector3(50, 1, 125.42468)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5rrr5"]
 size = Vector3(1, 2, 1)
@@ -82,6 +77,9 @@ size = Vector3(3, 1, 8)
 [sub_resource type="BoxMesh" id="BoxMesh_chwpn"]
 size = Vector3(3, 1, 8)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_esopp"]
+size = Vector3(50, 1, 125.42468)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_af3po"]
 
 [node name="Node3D" type="Node3D" unique_id=1603397852]
@@ -102,17 +100,6 @@ light_indirect_energy = 0.725
 light_volumetric_fog_energy = 0.0
 light_specular = 0.475
 shadow_enabled = true
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=322567446]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -40.120575, 25)
-visible = false
-mesh = ExtResource("1_xrdnt")
-surface_material_override/0 = ExtResource("2_wrinw")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1294001192]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1943292748]
-shape = SubResource("BoxShape3D_esopp")
 
 [node name="Player" parent="." unique_id=1333031934 instance=ExtResource("3_chwpn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
@@ -284,7 +271,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -7.9201145, 0)
 script = ExtResource("9_wrinw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallDeathZone" unique_id=481050757]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4967823, 12.712341)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 12.712)
 shape = SubResource("BoxShape3D_esopp")
 
 [node name="End_trigger2" type="Area3D" parent="." unique_id=1246077191]

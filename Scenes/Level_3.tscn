@@ -189,8 +189,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
 shape = SubResource("BoxShape3D_b10nm")
 
 [node name="End_trigger" type="Area3D" parent="." unique_id=1193950204]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 72)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 8, 72)
 script = ExtResource("6_kqn1a")
+next_level_path = "res://Scenes/level_4.tscn"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="End_trigger" unique_id=1095805737]
 material_override = ExtResource("7_ope7d")
@@ -293,6 +294,28 @@ surface_material_override/0 = ExtResource("9_hwx6u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platform 15" unique_id=1636404031]
 shape = SubResource("BoxShape3D_dudvk")
+
+[node name="Platform 16" type="StaticBody3D" parent="." unique_id=1378644697]
+transform = Transform3D(0.9659258, -0.1484525, 0.21201216, 0, 0.81915206, 0.57357645, -0.25881904, -0.5540323, 0.7912401, -2, 5.5, 57)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform 16" unique_id=936828217]
+material_override = ExtResource("9_hwx6u")
+mesh = SubResource("BoxMesh_dvi3f")
+surface_material_override/0 = ExtResource("9_hwx6u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform 16" unique_id=405780322]
+shape = SubResource("BoxShape3D_151xs")
+
+[node name="Platform 17" type="StaticBody3D" parent="." unique_id=1955526000]
+transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 66)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform 17" unique_id=592962424]
+material_override = ExtResource("9_hwx6u")
+mesh = SubResource("BoxMesh_dvi3f")
+surface_material_override/0 = ExtResource("9_hwx6u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform 17" unique_id=670516309]
+shape = SubResource("BoxShape3D_151xs")
 
 [connection signal="body_entered" from="End_trigger" to="End_trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="FallDeathZone" to="FallDeathZone" method="_on_body_entered"]

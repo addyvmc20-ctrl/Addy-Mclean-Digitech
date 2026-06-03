@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b8wdsl0udjor2"]
 
-[ext_resource type="Script" uid="uid://bt2qfcrnm6opv" path="res://Scenes/starfield.gd" id="1_f7fkx"]
+[ext_resource type="Script" uid="uid://bt2qfcrnm6opv" path="res://Scripts/starfield.gd" id="1_f7fkx"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f7fkx"]
 shading_mode = 0
