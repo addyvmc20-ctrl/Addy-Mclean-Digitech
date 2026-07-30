@@ -198,7 +198,19 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_cjntd")
 text = "Level 5
 "
 
+[node name="level 6" type="Button" parent="HBoxContainer" unique_id=737468887]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_4bw2l")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_mcy63")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iio8b")
+theme_override_styles/hover = SubResource("StyleBoxFlat_cjntd")
+text = "Level 6
+"
+
 [connection signal="pressed" from="HBoxContainer/level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="HBoxContainer/level 2" to="." method="_on_level_2_pressed"]
 [connection signal="pressed" from="HBoxContainer/level 3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="HBoxContainer/level 4" to="." method="_on_level_4_pressed"]
+[connection signal="pressed" from="HBoxContainer/level 5" to="." method="_on_level_5_pressed"]

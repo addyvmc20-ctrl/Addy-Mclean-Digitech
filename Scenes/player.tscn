@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bms6hfw7gbgd3"]
 
 [ext_resource type="Script" uid="uid://b5mqf56dgydq4" path="res://Scripts/player.gd" id="1_4flbx"]
-[ext_resource type="PackedScene" uid="uid://w6ewxjpi1h1" path="res://Digi_astronaut_player7.glb" id="2_cvnsp"]
+[ext_resource type="PackedScene" uid="uid://w6ewxjpi1h1" path="res://Models/Digi_astronaut_player7.glb" id="2_cvnsp"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4flbx"]
 friction = 0.4

@@ -35,8 +35,7 @@ folder_colors={
 "res://Mesh/": "yellow",
 "res://Physics Materials/": "teal",
 "res://Scenes/": "red",
-"res://Scripts/": "green",
-"res://demo/": "gray"
+"res://Scripts/": "green"
 }
 
 [global_group]

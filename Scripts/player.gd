@@ -47,7 +47,7 @@ func _process(delta: float) -> void:
 
 	pitch_pivot.rotation.x = clamp(
 		pitch_pivot.rotation.x,
-		deg_to_rad(-30),
+		deg_to_rad(-90),
 		deg_to_rad(30)
 	)
 

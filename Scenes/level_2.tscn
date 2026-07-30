@@ -185,10 +185,11 @@ mesh = SubResource("BoxMesh_44tr1")
 shape = SubResource("BoxShape3D_pmxqn")
 
 [node name="FallDeathZone" type="Area3D" parent="." unique_id=1032303570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 script = ExtResource("8_2mgoq")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallDeathZone" unique_id=1143089068]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -9.296295, 25)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
 shape = SubResource("BoxShape3D_uhnj4")
 
 [node name="Platform 8" type="StaticBody3D" parent="." unique_id=2081777092]

@@ -12,7 +12,7 @@
 [ext_resource type="Material" uid="uid://5fkbsb00hwn8" path="res://Materials/moving_platform.tres" id="9_mbnb1"]
 [ext_resource type="BoxMesh" uid="uid://dul7auwc6x0k8" path="res://Mesh/3x3_plat_mesh.tres" id="11_3v663"]
 [ext_resource type="Shape3D" uid="uid://cx4i68yum88fr" path="res://Mesh/3x3_plat_coll.tres" id="12_w8kbg"]
-[ext_resource type="BoxMesh" uid="uid://bqsc618py5q7i" path="res://Mesh/1x3_plat_mesh.tres" id="13_3v663"]
+[ext_resource type="BoxMesh" uid="uid://brog8hkf5v3d0" path="res://Mesh/1x3_plat_mesh.tres" id="13_3v663"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k6xtq"]
 sky_top_color = Color(0.0003117929, 0, 0.037164446, 1)
@@ -163,6 +163,7 @@ shape = SubResource("BoxShape3D_b10nm")
 [node name="End_trigger" type="Area3D" parent="." unique_id=1193950204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 7.5, 72)
 script = ExtResource("4_54c2w")
+next_level_path = "res://Scenes/level_5.tscn"
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="End_trigger" unique_id=1095805737]
 material_override = ExtResource("5_3v663")
@@ -172,11 +173,10 @@ mesh = SubResource("BoxMesh_44tr1")
 shape = SubResource("BoxShape3D_pmxqn")
 
 [node name="FallDeathZone" type="Area3D" parent="." unique_id=1032303570]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -11.376963, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 25)
 script = ExtResource("6_w8kbg")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallDeathZone" unique_id=1143089068]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 25)
 shape = SubResource("BoxShape3D_uhnj4")
 
 [node name="Long 1" type="StaticBody3D" parent="." unique_id=921708870]
@@ -191,10 +191,10 @@ surface_material_override/0 = ExtResource("7_gxyip")
 shape = ExtResource("8_54c2w")
 
 [node name="Platform mv_left_right" type="AnimatableBody3D" parent="." unique_id=1409378630]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 17)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 27)
 script = ExtResource("8_b8ytw")
 move_speed = 3.0
-move_axis = Vector3(0, 0, -1)
+move_axis = Vector3(0, 0, 1)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Platform mv_left_right" unique_id=698464977]
 mesh = SubResource("BoxMesh_cicwn")

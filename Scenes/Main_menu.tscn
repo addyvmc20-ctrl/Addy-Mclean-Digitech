@@ -118,7 +118,7 @@ offset_bottom = 352.5
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("3_ihofj")
 theme_override_font_sizes/font_size = 150
-text = "Platformer"
+text = "Astro Plat"
 horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_start_pressed"]

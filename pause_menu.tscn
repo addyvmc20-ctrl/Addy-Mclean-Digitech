@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://b1n3pr7kidh0l"]
+
+[ext_resource type="Script" uid="uid://ckc6ud1e75fc2" path="res://pause_menu.gd" id="1_hdmo1"]
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1760737877]
+script = ExtResource("1_hdmo1")
+
+[node name="Panel" type="Panel" parent="." unique_id=1234887365]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1556376971]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -250.0
+offset_right = 250.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Resume" type="Button" parent="Panel/VBoxContainer" unique_id=2061259900]
+process_mode = 3
+layout_mode = 2
+
+[node name="Levels" type="Button" parent="Panel/VBoxContainer" unique_id=1314194353]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="Panel/VBoxContainer" unique_id=1518415808]
+layout_mode = 2

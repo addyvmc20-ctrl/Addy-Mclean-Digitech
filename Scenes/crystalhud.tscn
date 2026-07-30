@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://dj2yjpwygceff"]
+
+[ext_resource type="Script" uid="uid://xnof0ss52eh" path="res://Scenes/crystalhud.gd" id="1_5b2pp"]
+[ext_resource type="Texture2D" uid="uid://cog62ves0md3f" path="res://Models/empty_texture.png" id="1_otsfp"]
+
+[node name="Control" type="CanvasLayer" unique_id=634134614]
+scale = Vector2(0.08, 0.08)
+transform = Transform2D(0.08, 0, 0, 0.08, 0, 0)
+script = ExtResource("1_5b2pp")
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1193218761]
+offset_right = 5768.0
+offset_bottom = 1080.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1625644857]
+clip_contents = true
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+alignment = 1
+
+[node name="crystal1" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1684540636]
+layout_mode = 2
+texture = ExtResource("1_otsfp")
+
+[node name="crystal2" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=1761338564]
+layout_mode = 2
+texture = ExtResource("1_otsfp")
+
+[node name="crystal3" type="TextureRect" parent="MarginContainer/HBoxContainer" unique_id=133334903]
+layout_mode = 2
+texture = ExtResource("1_otsfp")
