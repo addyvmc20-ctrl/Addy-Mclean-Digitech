@@ -16,6 +16,7 @@ var touching_ice := false
 @onready var pitch_pivot := $TwistPivot/PitchPivot
 
 @onready var player_mesh := $Digi_astronaut_player7
+@onready var pause_menu = get_tree().get_first_node_in_group("pause_menu")
 
 
 func _ready() -> void:
@@ -65,10 +66,12 @@ func _process(delta: float) -> void:
 
 
 func _unhandled_input(event: InputEvent) -> void:
+	#Camara Movement
 	if event is InputEventMouseMotion:
 		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 			twist_input = -event.relative.x * mouse_senstivity
 			pitch_input = -event.relative.y * mouse_senstivity
+
 
 
 func _integrate_forces(state):
@@ -84,3 +87,6 @@ func _integrate_forces(state):
 
 			if body != null and body.is_in_group("ice"):
 				touching_ice = true
+	
+	
+	

@@ -1,4 +1,4 @@
-extends Control
+extends CanvasLayer
 
 func _ready():
 	visible = false
@@ -12,11 +12,20 @@ func toggle_pause():
 	get_tree().paused = visible
 
 
-func _on_resume_button_pressed():
+
+
+
+func _on_resume_pressed() -> void:
+	get_tree().paused = false
 	visible = false
-	get_tree().paused = false
 
 
-func _on_quit_button_pressed():
+func _on_levels_pressed() -> void:
 	get_tree().paused = false
-	get_tree().change_scene_to_file("res://MainMenu.tscn")
+	visible = false
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().change_scene_to_file("res://Scenes/level_menu.tscn")
+
+
+func _on_quit_pressed() -> void:
+	get_tree().quit()

@@ -5,6 +5,7 @@
 [ext_resource type="BoxMesh" uid="uid://dta4l17a3ryb0" path="res://Mesh/wall_mesh.tres" id="5_m08rq"]
 [ext_resource type="Script" uid="uid://cbve6f1lx45l3" path="res://Scripts/level_end_trigger.gd" id="6_kqn1a"]
 [ext_resource type="Material" uid="uid://csmkq21mbcqst" path="res://Materials/end_trigger_material.tres" id="7_ope7d"]
+[ext_resource type="PackedScene" uid="uid://b1n3pr7kidh0l" path="res://pause_menu.tscn" id="8_ale0u"]
 [ext_resource type="Script" uid="uid://c47etn0lx5ovh" path="res://Scripts/fall_death_zone.gd" id="8_qe2l3"]
 [ext_resource type="Material" uid="uid://dcv28ccxcrx3v" path="res://Materials/stationary_platform.tres" id="9_hwx6u"]
 
@@ -300,6 +301,8 @@ surface_material_override/0 = ExtResource("9_hwx6u")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Platform 17" unique_id=670516309]
 shape = SubResource("BoxShape3D_151xs")
+
+[node name="PauseMenu" parent="." unique_id=1760737877 instance=ExtResource("8_ale0u")]
 
 [connection signal="body_entered" from="End_trigger" to="End_trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="FallDeathZone" to="FallDeathZone" method="_on_body_entered"]

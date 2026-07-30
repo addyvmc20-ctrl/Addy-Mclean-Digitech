@@ -13,6 +13,7 @@
 [ext_resource type="BoxMesh" uid="uid://dul7auwc6x0k8" path="res://Mesh/3x3_plat_mesh.tres" id="11_3v663"]
 [ext_resource type="Shape3D" uid="uid://cx4i68yum88fr" path="res://Mesh/3x3_plat_coll.tres" id="12_w8kbg"]
 [ext_resource type="BoxMesh" uid="uid://brog8hkf5v3d0" path="res://Mesh/1x3_plat_mesh.tres" id="13_3v663"]
+[ext_resource type="PackedScene" uid="uid://b1n3pr7kidh0l" path="res://pause_menu.tscn" id="14_w8kbg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k6xtq"]
 sky_top_color = Color(0.0003117929, 0, 0.037164446, 1)
@@ -290,6 +291,8 @@ surface_material_override/0 = ExtResource("7_gxyip")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Short 8" unique_id=1419980577]
 shape = SubResource("BoxShape3D_w8kbg")
+
+[node name="PauseMenu" parent="." unique_id=1760737877 instance=ExtResource("14_w8kbg")]
 
 [connection signal="body_entered" from="End_trigger" to="End_trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="FallDeathZone" to="FallDeathZone" method="_on_body_entered"]
