@@ -16,3 +16,11 @@ func add_crystal():
 		crystal_icons[crystals].texture = load("res://Models/full_texture.png")
 		crystals += 1
 		print("Crystals collected:", crystals)
+
+func reset_crystals():
+	crystals = 0
+	
+	for icon in crystal_icons:
+		icon.texture = load("res://Models/empty_texture.png")
+	
+	print("Crystals reset")

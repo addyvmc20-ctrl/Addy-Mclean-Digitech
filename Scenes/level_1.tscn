@@ -2,12 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://bms6hfw7gbgd3" path="res://Scenes/player.tscn" id="3_chwpn"]
 [ext_resource type="Material" uid="uid://cxvf4wj4uqa7y" path="res://Materials/start_platform.tres" id="4_af3po"]
-[ext_resource type="BoxMesh" uid="uid://dta4l17a3ryb0" path="res://Mesh/wall_mesh.tres" id="5_uy8f0"]
 [ext_resource type="Script" uid="uid://cbve6f1lx45l3" path="res://Scripts/level_end_trigger.gd" id="6_6r07y"]
 [ext_resource type="Material" uid="uid://csmkq21mbcqst" path="res://Materials/end_trigger_material.tres" id="7_6ioyp"]
 [ext_resource type="Material" uid="uid://dcv28ccxcrx3v" path="res://Materials/stationary_platform.tres" id="8_oovug"]
 [ext_resource type="PackedScene" uid="uid://b1n3pr7kidh0l" path="res://pause_menu.tscn" id="8_xrdnt"]
+[ext_resource type="BoxMesh" uid="uid://brog8hkf5v3d0" path="res://Mesh/1x3_plat_mesh.tres" id="9_uy8f0"]
 [ext_resource type="Script" uid="uid://c47etn0lx5ovh" path="res://Scripts/fall_death_zone.gd" id="9_wrinw"]
+[ext_resource type="Script" uid="uid://b4agmrd7xpdqe" path="res://Scenes/crystal_1.gd" id="11_6ioyp"]
+[ext_resource type="PackedScene" uid="uid://dh5nh6h0surwq" path="res://Models/Crystal.glb" id="12_oovug"]
+[ext_resource type="PackedScene" uid="uid://dj2yjpwygceff" path="res://Scenes/crystalhud.tscn" id="12_uy8f0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrinw"]
 sky_top_color = Color(0.0003117929, 0, 0.037164446, 1)
@@ -47,12 +50,6 @@ size = Vector3(50, 25, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_5rrr5"]
 size = Vector3(50, 25, 1)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_133si"]
-size = Vector3(1, 25, 100)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_b10nm"]
-size = Vector3(1, 25, 100)
-
 [sub_resource type="BoxMesh" id="BoxMesh_44tr1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pmxqn"]
@@ -79,9 +76,13 @@ size = Vector3(3, 1, 8)
 size = Vector3(3, 1, 8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_esopp"]
-size = Vector3(50, 1, 125.42468)
+size = Vector3(100, 1, 125.425)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_af3po"]
+size = Vector3(1, 1, 9)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8i23i"]
+height = 5.0
 
 [node name="Node3D" type="Node3D" unique_id=1603397852]
 
@@ -141,30 +142,6 @@ mesh = SubResource("BoxMesh_ienac")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Back" unique_id=1488911821]
 shape = SubResource("BoxShape3D_5rrr5")
-
-[node name="Wall_Left" type="StaticBody3D" parent="." unique_id=1172391990]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24, 12, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall_Left" unique_id=1374013374]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 25)
-visible = false
-mesh = ExtResource("5_uy8f0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Left" unique_id=1545580100]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0, 25)
-shape = SubResource("BoxShape3D_133si")
-
-[node name="Wall_Right" type="StaticBody3D" parent="." unique_id=1754186948]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.088, 12, 0)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall_Right" unique_id=1165263743]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
-visible = false
-mesh = ExtResource("5_uy8f0")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Right" unique_id=1744593839]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0, 25)
-shape = SubResource("BoxShape3D_b10nm")
 
 [node name="End_trigger" type="Area3D" parent="." unique_id=1193950204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 72)
@@ -275,23 +252,80 @@ script = ExtResource("9_wrinw")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 12.712)
 shape = SubResource("BoxShape3D_esopp")
 
-[node name="End_trigger2" type="Area3D" parent="." unique_id=1246077191]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -0.58685684)
-script = ExtResource("6_6r07y")
-next_level_path = "res://Scenes/level_2.tscn"
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="End_trigger2" unique_id=1720082315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
-mesh = SubResource("BoxMesh_44tr1")
-surface_material_override/0 = ExtResource("7_6ioyp")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="End_trigger2" unique_id=1105657905]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 1, 0)
-shape = SubResource("BoxShape3D_af3po")
-
 [node name="PauseMenu" parent="." unique_id=1760737877 groups=["pause_menu"] instance=ExtResource("8_xrdnt")]
 visible = false
 
+[node name="Platform 10" type="StaticBody3D" parent="." unique_id=269498112]
+transform = Transform3D(0.42261824, 0, 0.9063078, 0, 1, 0, -0.9063078, 0, 0.42261824, 13, 2, 17)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform 10" unique_id=1983000499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+material_override = ExtResource("8_oovug")
+mesh = ExtResource("9_uy8f0")
+surface_material_override/0 = ExtResource("8_oovug")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform 10" unique_id=1457014741]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
+shape = SubResource("BoxShape3D_af3po")
+
+[node name="Platform 11" type="StaticBody3D" parent="." unique_id=1676025560]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 2, 17)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform 11" unique_id=1777417273]
+mesh = SubResource("BoxMesh_xrdnt")
+surface_material_override/0 = ExtResource("8_oovug")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform 11" unique_id=76650677]
+shape = SubResource("BoxShape3D_wrinw")
+
+[node name="Crystal 1" type="Area3D" parent="." unique_id=1935814568]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 3.5, 17)
+script = ExtResource("11_6ioyp")
+
+[node name="Crystal mesh1" parent="Crystal 1" unique_id=90569018 instance=ExtResource("12_oovug")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crystal 1" unique_id=981639844]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_8i23i")
+
+[node name="Control" parent="." unique_id=634134614 instance=ExtResource("12_uy8f0")]
+
+[node name="Crystal 2" type="Area3D" parent="." unique_id=1442436223]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 45)
+script = ExtResource("11_6ioyp")
+
+[node name="Crystal mesh1" parent="Crystal 2" unique_id=1183218262 instance=ExtResource("12_oovug")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crystal 2" unique_id=747056501]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_8i23i")
+
+[node name="Platform 12" type="StaticBody3D" parent="." unique_id=1201978997]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -8, 2, 55)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Platform 12" unique_id=2146269187]
+material_override = ExtResource("8_oovug")
+mesh = SubResource("BoxMesh_wrinw")
+surface_material_override/0 = ExtResource("8_oovug")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform 12" unique_id=765463340]
+shape = SubResource("BoxShape3D_chwpn")
+
+[node name="Crystal 3" type="Area3D" parent="." unique_id=1647799926]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 3.5, 55)
+script = ExtResource("11_6ioyp")
+
+[node name="Crystal mesh1" parent="Crystal 3" unique_id=1827181504 instance=ExtResource("12_oovug")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Crystal 3" unique_id=674660988]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_8i23i")
+
 [connection signal="body_entered" from="End_trigger" to="End_trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="FallDeathZone" to="FallDeathZone" method="_on_body_entered"]
-[connection signal="body_entered" from="End_trigger2" to="End_trigger2" method="_on_body_entered"]
+[connection signal="body_entered" from="Crystal 1" to="Crystal 1" method="_on_body_entered"]
+[connection signal="body_entered" from="Crystal 2" to="Crystal 2" method="_on_body_entered"]
+[connection signal="body_entered" from="Crystal 3" to="Crystal 3" method="_on_body_entered"]
