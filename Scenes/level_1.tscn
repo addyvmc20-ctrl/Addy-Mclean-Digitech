@@ -9,6 +9,7 @@
 [ext_resource type="BoxMesh" uid="uid://brog8hkf5v3d0" path="res://Mesh/1x3_plat_mesh.tres" id="9_uy8f0"]
 [ext_resource type="Script" uid="uid://c47etn0lx5ovh" path="res://Scripts/fall_death_zone.gd" id="9_wrinw"]
 [ext_resource type="Script" uid="uid://b4agmrd7xpdqe" path="res://Scenes/crystal_1.gd" id="11_6ioyp"]
+[ext_resource type="PackedScene" uid="uid://dxbdsa6dsxnxp" path="res://death_count_hud.tscn" id="12_6r07y"]
 [ext_resource type="PackedScene" uid="uid://dh5nh6h0surwq" path="res://Models/Crystal.glb" id="12_oovug"]
 [ext_resource type="PackedScene" uid="uid://dj2yjpwygceff" path="res://Scenes/crystalhud.tscn" id="12_uy8f0"]
 
@@ -38,18 +39,6 @@ size = Vector3(1, 2, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_or7tv"]
 size = Vector3(5, 2, 5)
 
-[sub_resource type="BoxMesh" id="BoxMesh_xylue"]
-size = Vector3(50, 25, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tj5wv"]
-size = Vector3(50, 25, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ienac"]
-size = Vector3(50, 25, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_5rrr5"]
-size = Vector3(50, 25, 1)
-
 [sub_resource type="BoxMesh" id="BoxMesh_44tr1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_pmxqn"]
@@ -76,7 +65,7 @@ size = Vector3(3, 1, 8)
 size = Vector3(3, 1, 8)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_esopp"]
-size = Vector3(100, 1, 125.425)
+size = Vector3(132.33539, 1, 155.01738)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_af3po"]
 size = Vector3(1, 1, 9)
@@ -120,28 +109,6 @@ surface_material_override/0 = ExtResource("4_af3po")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Start" unique_id=1634042796]
 shape = SubResource("BoxShape3D_or7tv")
-
-[node name="Wall_Front" type="StaticBody3D" parent="." unique_id=1664861459]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, 24.027636)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall_Front" unique_id=1518740365]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
-visible = false
-mesh = SubResource("BoxMesh_xylue")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Front" unique_id=23197196]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
-shape = SubResource("BoxShape3D_tj5wv")
-
-[node name="Wall_Back" type="StaticBody3D" parent="." unique_id=2055260077]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12, -24)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall_Back" unique_id=649781847]
-visible = false
-mesh = SubResource("BoxMesh_ienac")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall_Back" unique_id=1488911821]
-shape = SubResource("BoxShape3D_5rrr5")
 
 [node name="End_trigger" type="Area3D" parent="." unique_id=1193950204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, 72)
@@ -249,11 +216,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -10, 0)
 script = ExtResource("9_wrinw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="FallDeathZone" unique_id=481050757]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.5, 12.712)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.3055115, -2.5, 27.508188)
 shape = SubResource("BoxShape3D_esopp")
-
-[node name="PauseMenu" parent="." unique_id=1760737877 groups=["pause_menu"] instance=ExtResource("8_xrdnt")]
-visible = false
 
 [node name="Platform 10" type="StaticBody3D" parent="." unique_id=269498112]
 transform = Transform3D(0.42261824, 0, 0.9063078, 0, 1, 0, -0.9063078, 0, 0.42261824, 13, 2, 17)
@@ -289,8 +253,6 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_8i23i")
 
-[node name="Control" parent="." unique_id=634134614 instance=ExtResource("12_uy8f0")]
-
 [node name="Crystal 2" type="Area3D" parent="." unique_id=1442436223]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.5, 45)
 script = ExtResource("11_6ioyp")
@@ -323,6 +285,13 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Crystal 3" unique_id=674660988]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_8i23i")
+
+[node name="PauseMenu" parent="." unique_id=1760737877 groups=["pause_menu"] instance=ExtResource("8_xrdnt")]
+visible = false
+
+[node name="Crystal HUD" parent="." unique_id=634134614 instance=ExtResource("12_uy8f0")]
+
+[node name="DeathCountHUD" parent="." unique_id=1864981419 instance=ExtResource("12_6r07y")]
 
 [connection signal="body_entered" from="End_trigger" to="End_trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="FallDeathZone" to="FallDeathZone" method="_on_body_entered"]
