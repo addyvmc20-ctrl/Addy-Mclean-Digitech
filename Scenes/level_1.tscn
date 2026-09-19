@@ -12,6 +12,9 @@
 [ext_resource type="PackedScene" uid="uid://dxbdsa6dsxnxp" path="res://Scenes/death_count_hud.tscn" id="12_6r07y"]
 [ext_resource type="PackedScene" uid="uid://dh5nh6h0surwq" path="res://Models/Crystal.glb" id="12_oovug"]
 [ext_resource type="PackedScene" uid="uid://dj2yjpwygceff" path="res://Scenes/crystalhud.tscn" id="12_uy8f0"]
+[ext_resource type="Texture2D" uid="uid://4igep3yas4ag" path="res://Models/Jupiter_Jupiter_Texture.png" id="13_oovug"]
+[ext_resource type="Texture2D" uid="uid://bgq5d386qnrc3" path="res://Models/AP_Sun_emission.png" id="14_8i23i"]
+[ext_resource type="Texture2D" uid="uid://b1b383cwvr8r1" path="res://Models/AP_Sun_ruffness.png" id="15_8yhm2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_wrinw"]
 sky_top_color = Color(0.0003117929, 0, 0.037164446, 1)
@@ -72,6 +75,17 @@ size = Vector3(1, 1, 9)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_8i23i"]
 height = 5.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_pjppf"]
+radius = 10.0
+height = 20.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yltlr"]
+albedo_texture = ExtResource("13_oovug")
+roughness_texture = ExtResource("15_8yhm2")
+emission_enabled = true
+emission_energy_multiplier = 8.97
+emission_texture = ExtResource("14_8i23i")
 
 [node name="Node3D" type="Node3D" unique_id=1603397852]
 
@@ -292,6 +306,368 @@ visible = false
 [node name="Crystal HUD" parent="." unique_id=634134614 instance=ExtResource("12_uy8f0")]
 
 [node name="DeathCountHUD" parent="." unique_id=1864981419 instance=ExtResource("12_6r07y")]
+
+[node name="StarsGroup" type="Node3D" parent="." unique_id=65991619]
+
+[node name="Star" type="MeshInstance3D" parent="StarsGroup" unique_id=595001596]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 875.8197, 426.61896, -1476.064)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star2" type="MeshInstance3D" parent="StarsGroup" unique_id=719092810]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1540.6866, 811.3625, -50.752075)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star3" type="MeshInstance3D" parent="StarsGroup" unique_id=177375236]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2403.5693, 426.61896, -1476.064)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star4" type="MeshInstance3D" parent="StarsGroup" unique_id=224496237]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1152.1969, 145.83221, -1174.882)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star5" type="MeshInstance3D" parent="StarsGroup" unique_id=1639397239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -386.3568, 606.7348, -1350.0887)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star6" type="MeshInstance3D" parent="StarsGroup" unique_id=1761935100]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1110.527, 786.5171, -1978.5723)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star7" type="MeshInstance3D" parent="StarsGroup" unique_id=254896680]
+transform = Transform3D(-0.13855104, 0, 0.9903553, 0, 1, 0, -0.9903553, 0, -0.13855104, -2222.1846, 426.61896, 199.74963)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star8" type="MeshInstance3D" parent="StarsGroup" unique_id=695265795]
+transform = Transform3D(-0.13855104, 0, 0.9903553, 0, 1, 0, -0.9903553, 0, -0.13855104, -475.80975, 811.3625, 2395.4712)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star9" type="MeshInstance3D" parent="StarsGroup" unique_id=423552116]
+transform = Transform3D(-0.13855104, 0, 0.9903553, 0, 1, 0, -0.9903553, 0, -0.13855104, -1767.8218, 426.61896, 3447.5098)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star10" type="MeshInstance3D" parent="StarsGroup" unique_id=1669240267]
+transform = Transform3D(-0.13855104, 0, 0.9903553, 0, 1, 0, -0.9903553, 0, -0.13855104, -1642.9236, 145.83221, 2166.4775)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star11" type="MeshInstance3D" parent="StarsGroup" unique_id=1485959554]
+transform = Transform3D(-0.13855104, 0, 0.9903553, 0, 1, 0, -0.9903553, 0, -0.13855104, -1922.5485, 606.7348, 1432.2988)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star12" type="MeshInstance3D" parent="StarsGroup" unique_id=513689060]
+transform = Transform3D(-0.13855104, 0, 0.9903553, 0, 1, 0, -0.9903553, 0, -0.13855104, -2752.3652, 786.5171, 36.929077)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star13" type="MeshInstance3D" parent="StarsGroup" unique_id=735971783]
+transform = Transform3D(0.7664811, 0, -0.64226687, 0, 1, 0, 0.64226687, 0, 0.7664811, 2987.4382, -7.6276245, 905.98676)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star14" type="MeshInstance3D" parent="StarsGroup" unique_id=8715634]
+transform = Transform3D(0.7664811, 0, -0.64226687, 0, 1, 0, 0.64226687, 0, 0.7664811, 219.80103, 377.1159, 446.4195)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star15" type="MeshInstance3D" parent="StarsGroup" unique_id=970669911]
+transform = Transform3D(0.7664811, 0, -0.64226687, 0, 1, 0, 0.64226687, 0, 0.7664811, 473.84863, -7.6276245, -1200.2559)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star16" type="MeshInstance3D" parent="StarsGroup" unique_id=1055131083]
+transform = Transform3D(0.7664811, 0, -0.64226687, 0, 1, 0, 0.64226687, 0, 0.7664811, 1239.5625, -288.41437, -165.69073)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star17" type="MeshInstance3D" parent="StarsGroup" unique_id=150096004]
+transform = Transform3D(0.7664811, 0, -0.64226687, 0, 1, 0, 0.64226687, 0, 0.7664811, 1939.094, 172.48822, 191.89027)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star18" type="MeshInstance3D" parent="StarsGroup" unique_id=570869439]
+transform = Transform3D(0.7664811, 0, -0.64226687, 0, 1, 0, 0.64226687, 0, 0.7664811, 3490.0813, 352.2705, 671.5683)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star19" type="MeshInstance3D" parent="StarsGroup" unique_id=1134194733]
+transform = Transform3D(-0.031468365, 0, -0.99950475, 0, 1, 0, 0.99950475, 0, -0.031468365, 1390.3535, -1224.7567, 1313.2449)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star20" type="MeshInstance3D" parent="StarsGroup" unique_id=286922411]
+transform = Transform3D(-0.031468365, 0, -0.99950475, 0, 1, 0, 0.99950475, 0, -0.031468365, 41.791138, -840.0132, -1146.917)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star21" type="MeshInstance3D" parent="StarsGroup" unique_id=1264656106]
+transform = Transform3D(-0.031468365, 0, -0.99950475, 0, 1, 0, 0.99950475, 0, -0.031468365, 1493.5505, -1224.7567, -1964.5199)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star22" type="MeshInstance3D" parent="StarsGroup" unique_id=692242634]
+transform = Transform3D(-0.031468365, 0, -0.99950475, 0, 1, 0, 0.99950475, 0, -0.031468365, 1153.1392, -1505.5435, -723.2451)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star23" type="MeshInstance3D" parent="StarsGroup" unique_id=940316446]
+transform = Transform3D(-0.031468365, 0, -0.99950475, 0, 1, 0, 0.99950475, 0, -0.031468365, 1304.1594, -1044.6409, 47.729187)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star24" type="MeshInstance3D" parent="StarsGroup" unique_id=1461926582]
+transform = Transform3D(-0.031468365, 0, -0.99950475, 0, 1, 0, 0.99950475, 0, -0.031468365, 1885.227, -864.8586, 1563.649)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star25" type="MeshInstance3D" parent="StarsGroup" unique_id=1472470259]
+transform = Transform3D(0.9942248, 0, 0.10731756, 0, 1, 0, -0.10731756, 0, 0.9942248, -187.1409, -1224.7567, -1835.9601)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star26" type="MeshInstance3D" parent="StarsGroup" unique_id=416020005]
+transform = Transform3D(0.9942248, 0, 0.10731756, 0, 1, 0, -0.10731756, 0, 0.9942248, -2436.7307, -840.0132, -159.54613)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star27" type="MeshInstance3D" parent="StarsGroup" unique_id=2069379643]
+transform = Transform3D(0.9942248, 0, 0.10731756, 0, 1, 0, -0.10731756, 0, 0.9942248, -3447.5908, -1224.7567, -1484.0242)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star28" type="MeshInstance3D" parent="StarsGroup" unique_id=1355487582]
+transform = Transform3D(0.9942248, 0, 0.10731756, 0, 1, 0, -0.10731756, 0, 0.9942248, -2171.123, -1505.5435, -1318.8757)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star29" type="MeshInstance3D" parent="StarsGroup" unique_id=1195158952]
+transform = Transform3D(0.9942248, 0, 0.10731756, 0, 1, 0, -0.10731756, 0, 0.9942248, -1428.5088, -1044.6409, -1575.2589)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star30" type="MeshInstance3D" parent="StarsGroup" unique_id=2129643378]
+transform = Transform3D(0.9942248, 0, 0.10731756, 0, 1, 0, -0.10731756, 0, 0.9942248, -7.7170563, -864.8586, -2360.7546)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star31" type="MeshInstance3D" parent="StarsGroup" unique_id=1719740254]
+transform = Transform3D(-0.6660687, 0, -0.7458904, 0, 1, 0, 0.7458904, 0, -0.6660687, -1056.9666, -1659.0033, 3348.8584)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star32" type="MeshInstance3D" parent="StarsGroup" unique_id=1686453900]
+transform = Transform3D(-0.6660687, 0, -0.7458904, 0, 1, 0, 0.7458904, 0, -0.6660687, -510.5339, -1274.2598, 597.05365)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star33" type="MeshInstance3D" parent="StarsGroup" unique_id=379591202]
+transform = Transform3D(-0.6660687, 0, -0.7458904, 0, 1, 0, 0.7458904, 0, -0.6660687, 1127.3315, -1659.0033, 902.7936)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star34" type="MeshInstance3D" parent="StarsGroup" unique_id=854784935]
+transform = Transform3D(-0.6660687, 0, -0.7458904, 0, 1, 0, 0.7458904, 0, -0.6660687, 69.18295, -1939.79, 1635.5723)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star35" type="MeshInstance3D" parent="StarsGroup" unique_id=1379024918]
+transform = Transform3D(-0.6660687, 0, -0.7458904, 0, 1, 0, 0.7458904, 0, -0.6660687, -310.23407, -1478.8875, 2323.5046)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star36" type="MeshInstance3D" parent="StarsGroup" unique_id=156248155]
+transform = Transform3D(-0.6660687, 0, -0.7458904, 0, 1, 0, 0.7458904, 0, -0.6660687, -838.48157, -1299.1051, 3858.6292)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star37" type="MeshInstance3D" parent="StarsGroup" unique_id=2040154285]
+transform = Transform3D(-0.83956933, 0, -0.5432526, 0, 1, 0, 0.5432526, 0, -0.83956933, 304.8629, 528.3734, 4161.0693)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star38" type="MeshInstance3D" parent="StarsGroup" unique_id=473471194]
+transform = Transform3D(-0.83956933, 0, -0.5432526, 0, 1, 0, 0.5432526, 0, -0.83956933, 1559.3833, 913.11694, 1651.6476)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star39" type="MeshInstance3D" parent="StarsGroup" unique_id=2083180006]
+transform = Transform3D(-0.83956933, 0, -0.5432526, 0, 1, 0, 0.5432526, 0, -0.83956933, 3058.1372, 528.3734, 2379.5327)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star40" type="MeshInstance3D" parent="StarsGroup" unique_id=1792121146]
+transform = Transform3D(-0.83956933, 0, -0.5432526, 0, 1, 0, 0.5432526, 0, -0.83956933, 1843.9055, 247.58665, 2806.4807)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star41" type="MeshInstance3D" parent="StarsGroup" unique_id=1050298824]
+transform = Transform3D(-0.83956933, 0, -0.5432526, 0, 1, 0, 0.5432526, 0, -0.83956933, 1296.1113, 708.48926, 3369.6235)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star42" type="MeshInstance3D" parent="StarsGroup" unique_id=1625454304]
+transform = Transform3D(-0.83956933, 0, -0.5432526, 0, 1, 0, 0.5432526, 0, -0.83956933, 380.7989, 888.2715, 4710.465)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star43" type="MeshInstance3D" parent="StarsGroup" unique_id=1587422705]
+transform = Transform3D(0.65433633, 0, -0.7562037, 0, 1, 0, 0.7562037, 0, 0.65433633, 1995.4624, 528.3734, 1071.1085)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star44" type="MeshInstance3D" parent="StarsGroup" unique_id=867614608]
+transform = Transform3D(0.65433633, 0, -0.7562037, 0, 1, 0, 0.7562037, 0, 0.65433633, -663.5719, 913.11694, 176.37073)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star45" type="MeshInstance3D" parent="StarsGroup" unique_id=1402857247]
+transform = Transform3D(0.65433633, 0, -0.7562037, 0, 1, 0, 0.7562037, 0, 0.65433633, -150.3609, 528.3734, -1408.7773)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star46" type="MeshInstance3D" parent="StarsGroup" unique_id=231746459]
+transform = Transform3D(0.65433633, 0, -0.7562037, 0, 1, 0, 0.7562037, 0, 0.65433633, 440.70245, 247.58665, -265.41064)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star47" type="MeshInstance3D" parent="StarsGroup" unique_id=38595121]
+transform = Transform3D(0.65433633, 0, -0.7562037, 0, 1, 0, 0.7562037, 0, 0.65433633, 1074.3115, 708.48926, 199.07605)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star48" type="MeshInstance3D" parent="StarsGroup" unique_id=550645874]
+transform = Transform3D(0.65433633, 0, -0.7562037, 0, 1, 0, 0.7562037, 0, 0.65433633, 2529.0383, 888.2715, 919.78564)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star49" type="MeshInstance3D" parent="StarsGroup" unique_id=885230585]
+transform = Transform3D(-0.9924272, 0, 0.12283471, 0, 1, 0, -0.12283471, 0, -0.9924272, -2762.0425, 94.126785, 3308.3145)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star50" type="MeshInstance3D" parent="StarsGroup" unique_id=1196624030]
+transform = Transform3D(-0.9924272, 0, 0.12283471, 0, 1, 0, -0.12283471, 0, -0.9924272, -188.75806, 478.87036, 2190.6272)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star51" type="MeshInstance3D" parent="StarsGroup" unique_id=1505303322]
+transform = Transform3D(-0.9924272, 0, 0.12283471, 0, 1, 0, -0.12283471, 0, -0.9924272, 492.51202, 94.126785, 3711.1372)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star52" type="MeshInstance3D" parent="StarsGroup" unique_id=1149814465]
+transform = Transform3D(-0.9924272, 0, 0.12283471, 0, 1, 0, -0.12283471, 0, -0.9924272, -712.38794, -186.65996, 3258.524)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star53" type="MeshInstance3D" parent="StarsGroup" unique_id=1189417676]
+transform = Transform3D(-0.9924272, 0, 0.12283471, 0, 1, 0, -0.12283471, 0, -0.9924272, -1493.9501, 274.24268, 3338.3325)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star54" type="MeshInstance3D" parent="StarsGroup" unique_id=1667712261]
+transform = Transform3D(-0.9924272, 0, 0.12283471, 0, 1, 0, -0.12283471, 0, -0.9924272, -3056.6978, 454.0249, 3778.1875)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star55" type="MeshInstance3D" parent="StarsGroup" unique_id=1097428693]
+transform = Transform3D(-0.51656365, 0, 0.8562488, 0, 1, 0, -0.8562488, 0, -0.51656365, -1642.4232, -1123.0023, 2098.7727)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star56" type="MeshInstance3D" parent="StarsGroup" unique_id=903573959]
+transform = Transform3D(-0.51656365, 0, 0.8562488, 0, 1, 0, -0.8562488, 0, -0.51656365, 826.2778, -738.2588, 3431.6392)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star57" type="MeshInstance3D" parent="StarsGroup" unique_id=420792217]
+transform = Transform3D(-0.51656365, 0, 0.8562488, 0, 1, 0, -0.8562488, 0, -0.51656365, 51.590027, -1123.0023, 4906.7456)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star58" type="MeshInstance3D" parent="StarsGroup" unique_id=2132434020]
+transform = Transform3D(-0.51656365, 0, 0.8562488, 0, 1, 0, -0.8562488, 0, -0.51656365, -336.93677, -1403.7891, 3679.6802)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star59" type="MeshInstance3D" parent="StarsGroup" unique_id=1311591278]
+transform = Transform3D(-0.51656365, 0, 0.8562488, 0, 1, 0, -0.8562488, 0, -0.51656365, -882.5625, -942.8865, 3114.4358)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star60" type="MeshInstance3D" parent="StarsGroup" unique_id=1772351494]
+transform = Transform3D(-0.51656365, 0, 0.8562488, 0, 1, 0, -0.8562488, 0, -0.51656365, -2193.9365, -763.1042, 2157.3826)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star61" type="MeshInstance3D" parent="StarsGroup" unique_id=1632369944]
+transform = Transform3D(-0.77642006, 0, -0.6302157, 0, 1, 0, 0.6302157, 0, -0.77642006, 1392.8066, -1123.0023, 3885.7708)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star62" type="MeshInstance3D" parent="StarsGroup" unique_id=202092865]
+transform = Transform3D(-0.77642006, 0, -0.6302157, 0, 1, 0, 0.6302157, 0, -0.77642006, 2370.7769, -738.2588, 1256.2096)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star63" type="MeshInstance3D" parent="StarsGroup" unique_id=1480478572]
+transform = Transform3D(-0.77642006, 0, -0.6302157, 0, 1, 0, 0.6302157, 0, -0.77642006, 3938.9902, -1123.0023, 1819.0482)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star64" type="MeshInstance3D" parent="StarsGroup" unique_id=253558094]
+transform = Transform3D(-0.77642006, 0, -0.6302157, 0, 1, 0, 0.6302157, 0, -0.77642006, 2777.5898, -1403.7891, 2373.839)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star65" type="MeshInstance3D" parent="StarsGroup" unique_id=629402126]
+transform = Transform3D(-0.77642006, 0, -0.6302157, 0, 1, 0, 0.6302157, 0, -0.77642006, 2293.3945, -942.8865, 2992.5176)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star66" type="MeshInstance3D" parent="StarsGroup" unique_id=1097553704]
+transform = Transform3D(-0.77642006, 0, -0.6302157, 0, 1, 0, 0.6302157, 0, -0.77642006, 1527.2639, -763.1042, 4423.8447)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star67" type="MeshInstance3D" parent="StarsGroup" unique_id=386400183]
+transform = Transform3D(0.15400395, 0, 0.9880702, 0, 1, 0, -0.9880702, 0, 0.15400395, -693.58057, -1557.2489, -939.77856)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star68" type="MeshInstance3D" parent="StarsGroup" unique_id=232391461]
+transform = Transform3D(0.15400395, 0, 0.9880702, 0, 1, 0, -0.9880702, 0, 0.15400395, 342.57642, -1172.5054, 1667.403)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star69" type="MeshInstance3D" parent="StarsGroup" unique_id=9517553]
+transform = Transform3D(0.15400395, 0, 0.9880702, 0, 1, 0, -0.9880702, 0, 0.15400395, -1198.6191, -1557.2489, 2300.4878)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star70" type="MeshInstance3D" parent="StarsGroup" unique_id=1436258956]
+transform = Transform3D(0.15400395, 0, 0.9880702, 0, 1, 0, -0.9880702, 0, 0.15400395, -708.31396, -1838.0356, 1110.4272)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star71" type="MeshInstance3D" parent="StarsGroup" unique_id=822485141]
+transform = Transform3D(0.15400395, 0, 0.9880702, 0, 1, 0, -0.9880702, 0, 0.15400395, -763.48804, -1377.133, 326.7412)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
+
+[node name="Star72" type="MeshInstance3D" parent="StarsGroup" unique_id=2136734389]
+transform = Transform3D(0.15400395, 0, 0.9880702, 0, 1, 0, -0.9880702, 0, 0.15400395, -1153.9481, -1197.3507, -1249.0742)
+mesh = SubResource("SphereMesh_pjppf")
+surface_material_override/0 = SubResource("StandardMaterial3D_yltlr")
 
 [connection signal="body_entered" from="End_trigger" to="End_trigger" method="_on_body_entered"]
 [connection signal="body_entered" from="FallDeathZone" to="FallDeathZone" method="_on_body_entered"]
