@@ -2,11 +2,12 @@
 
 [ext_resource type="Script" uid="uid://b5mqf56dgydq4" path="res://Scripts/player.gd" id="1_4flbx"]
 [ext_resource type="PackedScene" uid="uid://w6ewxjpi1h1" path="res://Models/Digi_astronaut_player7.glb" id="2_cvnsp"]
+[ext_resource type="AudioStream" uid="uid://cp0k2gi4shirk" path="res://Audio/Death_soundeffect_digi.wav" id="3_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://be25jbvlsoyfo" path="res://Models/JumpPlayer.glb" id="4_vgqql"]
+[ext_resource type="AudioStream" uid="uid://ccds2hdkmoiqg" path="res://Audio/JetpackSound.wav" id="5_fkybt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4flbx"]
 friction = 0.4
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_onrkg"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6t5aa"]
 
@@ -17,12 +18,12 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_4flbx")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=312429517]
-visible = false
-mesh = SubResource("CapsuleMesh_onrkg")
-
-[node name="Digi_astronaut_player7" parent="." unique_id=819208412 instance=ExtResource("2_cvnsp")]
+[node name="NormalPlayer" parent="." unique_id=819208412 instance=ExtResource("2_cvnsp")]
 transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0.5838816, 0)
+
+[node name="JumpPlayer" parent="." unique_id=579507219 instance=ExtResource("4_vgqql")]
+transform = Transform3D(-0.5, 0, -4.371139e-08, 0, 0.5, 0, 4.371139e-08, 0, -0.5, 0, 0.584, 0)
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2115990163]
 shape = SubResource("CapsuleShape3D_6t5aa")
@@ -35,5 +36,13 @@ transform = Transform3D(1, 0, 0, 0, 0.9848077, 0.17364818, 0, -0.17364818, 0.984
 
 [node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot" unique_id=1018752353]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3)
+
+[node name="DeathSound" type="AudioStreamPlayer" parent="." unique_id=1812410162]
+stream = ExtResource("3_6t5aa")
+volume_db = -18.246
+
+[node name="JetpackSound" type="AudioStreamPlayer" parent="." unique_id=519662538]
+stream = ExtResource("5_fkybt")
+volume_db = -16.421
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

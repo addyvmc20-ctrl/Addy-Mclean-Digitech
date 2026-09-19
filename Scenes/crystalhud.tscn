@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dj2yjpwygceff"]
 
-[ext_resource type="Script" uid="uid://xnof0ss52eh" path="res://Scenes/crystalhud.gd" id="1_5b2pp"]
+[ext_resource type="Script" uid="uid://xnof0ss52eh" path="res://Scripts/crystalhud.gd" id="1_5b2pp"]
 [ext_resource type="Texture2D" uid="uid://cog62ves0md3f" path="res://Models/empty_texture.png" id="1_otsfp"]
 
 [node name="Control" type="CanvasLayer" unique_id=634134614]

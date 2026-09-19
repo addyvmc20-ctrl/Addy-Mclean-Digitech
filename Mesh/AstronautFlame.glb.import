@@ -3,19 +3,21 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://gyojxt6snxhf"
-path="res://.godot/imported/Digi_astronaut_player2.glb-617b46b68d03b04e1c0b526c0643b672.scn"
+uid="uid://dx1rve0qrxw34"
+path="res://.godot/imported/AstronautFlame.glb-710d14fe18baa1e34c1564a0bf454b8b.scn"
 
 [deps]
 
-source_file="res://Models/Digi_astronaut_player2.glb"
-dest_files=["res://.godot/imported/Digi_astronaut_player2.glb-617b46b68d03b04e1c0b526c0643b672.scn"]
+source_file="res://Mesh/AstronautFlame.glb"
+dest_files=["res://.godot/imported/AstronautFlame.glb-710d14fe18baa1e34c1564a0bf454b8b.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/root_script=null
+mesh_library/use_node_names_as_mesh_names=false
+array_mesh/deduplicate_surfaces=true
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
@@ -40,3 +42,4 @@ materials/extract_path=""
 _subresources={}
 gltf/naming_version=2
 gltf/embedded_image_handling=1
+gltf/texture_map_mode=1

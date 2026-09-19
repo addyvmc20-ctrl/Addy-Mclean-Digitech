@@ -8,6 +8,7 @@ func _on_body_entered(body):
 	if body.name == "Player":
 		# Add to death count
 		death_count += 1
+		body.get_node("DeathSound").play()
 		
 		# Update death counter GUI
 		$"../DeathCountHUD/Label".text = "Deaths: " + str(death_count)

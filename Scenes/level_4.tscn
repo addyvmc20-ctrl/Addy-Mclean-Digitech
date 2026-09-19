@@ -11,11 +11,11 @@
 [ext_resource type="Material" uid="uid://5fkbsb00hwn8" path="res://Materials/moving_platform.tres" id="9_mbnb1"]
 [ext_resource type="BoxMesh" uid="uid://dul7auwc6x0k8" path="res://Mesh/3x3_plat_mesh.tres" id="11_3v663"]
 [ext_resource type="Shape3D" uid="uid://cx4i68yum88fr" path="res://Mesh/3x3_plat_coll.tres" id="12_w8kbg"]
-[ext_resource type="Script" uid="uid://b4agmrd7xpdqe" path="res://Scenes/crystal_1.gd" id="13_w8kbg"]
+[ext_resource type="Script" uid="uid://b4agmrd7xpdqe" path="res://Scripts/crystal_1.gd" id="13_w8kbg"]
 [ext_resource type="PackedScene" uid="uid://dh5nh6h0surwq" path="res://Models/Crystal.glb" id="14_gxyip"]
-[ext_resource type="PackedScene" uid="uid://b1n3pr7kidh0l" path="res://pause_menu.tscn" id="14_w8kbg"]
+[ext_resource type="PackedScene" uid="uid://b1n3pr7kidh0l" path="res://Scenes/pause_menu.tscn" id="14_w8kbg"]
 [ext_resource type="PackedScene" uid="uid://dj2yjpwygceff" path="res://Scenes/crystalhud.tscn" id="15_gxyip"]
-[ext_resource type="PackedScene" uid="uid://dxbdsa6dsxnxp" path="res://death_count_hud.tscn" id="16_b8ytw"]
+[ext_resource type="PackedScene" uid="uid://dxbdsa6dsxnxp" path="res://Scenes/death_count_hud.tscn" id="16_b8ytw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k6xtq"]
 sky_top_color = Color(0.0003117929, 0, 0.037164446, 1)

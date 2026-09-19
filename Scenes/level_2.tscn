@@ -5,12 +5,12 @@
 [ext_resource type="Script" uid="uid://cbve6f1lx45l3" path="res://Scripts/level_end_trigger.gd" id="4_2mgoq"]
 [ext_resource type="Material" uid="uid://csmkq21mbcqst" path="res://Materials/end_trigger_material.tres" id="5_uhnj4"]
 [ext_resource type="Script" uid="uid://c47etn0lx5ovh" path="res://Scripts/fall_death_zone.gd" id="8_2mgoq"]
-[ext_resource type="Script" uid="uid://b4agmrd7xpdqe" path="res://Scenes/crystal_1.gd" id="8_42uki"]
-[ext_resource type="PackedScene" uid="uid://b1n3pr7kidh0l" path="res://pause_menu.tscn" id="8_uhnj4"]
+[ext_resource type="Script" uid="uid://b4agmrd7xpdqe" path="res://Scripts/crystal_1.gd" id="8_42uki"]
+[ext_resource type="PackedScene" uid="uid://b1n3pr7kidh0l" path="res://Scenes/pause_menu.tscn" id="8_uhnj4"]
 [ext_resource type="PackedScene" uid="uid://dh5nh6h0surwq" path="res://Models/Crystal.glb" id="9_t7v2y"]
 [ext_resource type="Material" uid="uid://dcv28ccxcrx3v" path="res://Materials/stationary_platform.tres" id="9_uhnj4"]
 [ext_resource type="PackedScene" uid="uid://dj2yjpwygceff" path="res://Scenes/crystalhud.tscn" id="10_42uki"]
-[ext_resource type="PackedScene" uid="uid://dxbdsa6dsxnxp" path="res://death_count_hud.tscn" id="11_t7v2y"]
+[ext_resource type="PackedScene" uid="uid://dxbdsa6dsxnxp" path="res://Scenes/death_count_hud.tscn" id="11_t7v2y"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_uhnj4"]
 sky_top_color = Color(0.0003117929, 0, 0.037164446, 1)

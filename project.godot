@@ -12,8 +12,12 @@ config_version=5
 
 config/name="Digitech Platformer Game"
 run/main_scene="uid://cyodeuqrd5lbw"
-config/features=PackedStringArray("4.6", "Forward Plus")
+config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+BackgroundMusic="*uid://bxdbr6r1srtq1"
 
 [display]
 
@@ -28,6 +32,7 @@ enabled=PackedStringArray("res://addons/sky_3d/plugin.cfg")
 [file_customization]
 
 folder_colors={
+"res://Audio/": "red",
 "res://Collisions/": "pink",
 "res://Fonts/": "purple",
 "res://Images/": "blue",

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b1n3pr7kidh0l"]
 
-[ext_resource type="Script" uid="uid://ckc6ud1e75fc2" path="res://pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="Script" uid="uid://ckc6ud1e75fc2" path="res://Scripts/pause_menu.gd" id="1_hdmo1"]
 [ext_resource type="FontFile" uid="uid://ckerdr7ux1vlj" path="res://Fonts/Super Mindset.ttf" id="2_nwcfo"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05uyy"]
