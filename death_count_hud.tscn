@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dxbdsa6dsxnxp"]
+
+[ext_resource type="FontFile" uid="uid://ckerdr7ux1vlj" path="res://Fonts/Super Mindset.ttf" id="1_adseh"]
+
+[node name="DeathCountHUD" type="CanvasLayer" unique_id=1864981419]
+
+[node name="Label" type="Label" parent="." unique_id=1812200222]
+offset_left = 2.0
+offset_top = 1001.0
+offset_right = 340.0
+offset_bottom = 1104.0
+theme_override_fonts/font = ExtResource("1_adseh")
+theme_override_font_sizes/font_size = 50
+text = "Deaths: 0"
